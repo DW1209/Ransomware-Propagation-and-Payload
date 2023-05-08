@@ -13,6 +13,13 @@ def get_parameters():
 
 def main():
     attacker_port = get_parameters()
+    print(f'Server listening on port {attacker_port} ...')
+    while True:
+        try:
+            time.sleep(1)
+        except KeyboardInterrupt:
+            print('\nDetected CTRL + C pressed and exiting ...')
+            return
 
 
 if __name__ == '__main__':

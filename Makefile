@@ -1,8 +1,8 @@
 CRACK  = crack_attack
-SERVER = attack_server
+SERVER = attacker_server
 
 CRACK_FILE  = crack_attack.py
-SERVER_FILE = attack_server.py
+SERVER_FILE = attacker_server.py
 
 CAT  = cat
 XZ   = cat.xz
