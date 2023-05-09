@@ -30,7 +30,8 @@ def get_parameters():
 
 
 def get_words():
-    pathname = os.path.join('materials', 'victim.dat')
+    home = Path.home()
+    pathname = os.path.join(home, 'materials', 'victim.dat')
     with open(pathname, "r") as file:
         dictionary = file.read().splitlines()
         return dictionary

