@@ -9,13 +9,13 @@ n, e = 22291846172619859445381409012451, 65535
 
 home = Path.home()
 pathname = os.path.join(home, 'Pictures')
+encrypt  = os.path.join(home, 'materials', 'rsa_encrypt.py')
 
 for filename in os.listdir(pathname):
     if not filename.endswith('.jpg'):
         continue
-    pyfile  = os.path.join('materials', 'rsa_encrypt.py')
     picture = os.path.join(pathname, filename)
-    command = ['python3', pyfile, str(n), str(e), picture]
+    command = ['python3', encrypt, str(n), str(e), picture]
     subprocess.run(command)
 EOF
 
